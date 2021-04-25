@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    
+
+    <title>portfolio|mounia daoudi</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+        .skill {
+            background-color: rgb(190, 136, 35);
+            width: 30%;
+            flex: 1;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            color: blue;
+        }
+
+        .skill:hover {
+            color: white;
+            background-color: rgb(0, 255, 13);
+        }
+
+        .Myskills {
+            display: flex;
+        }
+
+        * {
+            margin: 0;
+
+        }
+
+        header {
+            background-color: rgb(236, 133, 193);
+            height: 75px;
+            position: sticky;
+            top: 0;
+
+        }
+
+        header a {
+            color: cornsilk;
+        }
+
+
+        .mynavbar {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .logo {
+            flex: 1;
+        }
+
+        .logo img {
+            width: 100px;
+        }
+
+        .menu ul {
+            display: flex;
+
+        }
+
+
+        .menu {
+            flex: 2;
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+
+        }
+
+        .menu ul li {
+            flex: 1;
+            list-style: none;
+
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .home {
+            height: 50%;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: rgb(131, 128, 128);
+
+            font-family: 'Bangers', cursive;
+font-family: 'Indie Flower', cursive;
+        }
+
+        .info {
+            flex: 2;
+            color: beige
+        }
+
+        .photo {
+            flex: 1;
+
+        }
+
+        .photo img {
+            width: 25%;
+        }
+
+        .skills {
+            height: fit-content;
+            background-color: rgb(180, 157, 157);
+            padding: 20px;
+
+
+        }
+
+        .contact {
+            height: fit-content;
+            background-color: rgb(34, 163, 180);
+
+
+
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        #skills h1 {
+            text-align: center;
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .name {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        .email {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        .contact h1 {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .btn {
+            width: 60%;
+            margin: auto;
+            background-color: blue;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+
+
+        }
+
+        .success {
+            visibility: hidden;
+            color: white;
+            background-color: rgb(220, 231, 66);
+            width: 60%;
+            padding: 10px;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <nav class="mynavbar">
+            <div class="logo">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBISEhUREREQDxUSDxARERIPDxESGRIYGBQZGRgUGRYcIS4lHB4rIBgYJjgmKy8xNTU1GiQ7QDszPy40NTEBDAwMEA8QHxISHzQrIyQ0NDE0NDQ0NDE0NDQ0NDY0NDQ2NDQ0NDQ0NDQ0MTQ0NDQ0NDQ0NDQ0NTQ0NDQ0NDQ0NP/AABEIAMIBAwMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYBBAcCA//EAEIQAAIBAgMDCQYEBAUDBQAAAAECAAMRBBIhBQYxEyJBUWFxgZGhBxQycrHBQlKCsjRiktEjM0NTdKLC8BYkVGNz/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAIDBAEFBv/EADARAAIBAgUBBwMDBQAAAAAAAAABAgMRBBIhMUFREyIyYXGBsQUzkRTB8BUjUqHh/9oADAMBAAIRAxEAPwDs0REAREQBERAERMQDz5Svbz7fXBoLANUb/LS/mzdg9T5iV2jjEoUnquQFRMx+w7ybATkVZ6+PxJIBd6j8xb6Io4C/QAOnv6TKqssqst2bcHh1UblLwrc1cdjqldy9Vy7H8x0XsCcAO6Tm5u3Ww9ZaTMzUajhLE3CMbAEdQvoR236JbNjbmYeioNRRXc8S4uqnqCcLdpue6fTbW6lCsh5JEw9VRdHQZBccLgaHv4iQjSku9ybKmNoSXZZdNr9PMs4nqRuxa7VKFNnBV8gDg6EONGHmDJC8vWup48lZtdD3ExMzpwREQBERAPMwTaepobXrZKTP+XI3kwM43ZHUrtIkImJmdOCIiAIiIAiIgCIiAIiIAiIgCIiAIiIBiYiaW08YtCk9VuCIWP8ANYaDxNh4xsdSbdkUT2ibVzVFwqHRLPU/mY/CvgDfxHVJ7dDYQwtLlKgtVqKC2b8C8Qn3Pb3CVnc7ZzYvFPiqwuqPyjHoaodQvcvHwWSntMqEJQUEgM75hc2awFrjplCe837HqTWscLB26vzLuKqnQMPA3nvScJw9Z6bB6bNTYfiUsp9J0rc/eQ4oGlVIFVFve1hUXhmt0EaXHb5dhWUnZlOJwEqKzJ3XJa6dMLew+Jix7zxn0mYlxgPFvpNVMZSZzTWpTLi90V1LC3G6g3m2ZzPG0MQm0a1ejQrc2rWZWGFe1vdcnKB7WfnDRNbk36ZCUnG1kc1ukuWdLiU3D1dos1JGqOBUoZ8/uqjKxuCrgrZSvNIJtfXQ8J4w9faX+ByjOvKZhUPII+RlZFynIosGAqNc6C410sWbyZo/Tv8AyRdCPTUTz/aU6k2LTAKP/cGo2IyVuUpZnRC5zFAV5w4G+vE62At63VOLRqVJ1qU6a4enzHotZuacxLW5jhraE6jo6R3NqlY46HdbutH+S5mQu9z5cFiD1Umt39EmjK9vy1sBX7Qi+brD2ZGkr1EvMnqbXAPWAZ7mnsx81Gmeukh81E3Z1EJKzaMxETpwREQBERAEREAREQBERAEREAREQDyZRfaLtA5aeFS5ao2dwvFgDZV8T9JeSZzvZS+/bVqV21p0DzermEonmQ7eErm9LLk04WKUnUe0Vf34Lbu5s0YXDJS0zWzOfzMdT/YdgErftN+DD/NU+gl6AlF9pvwYfser+0RUVotInhJOWJUnu2zY2ZuphK2EosyFWeijF1ZgcxUEnUkekqWMwtXZuLRr5grh6dThnS9nU9RtcEds6Xu7/B4e3/x6P7RIP2i4UPhlq21pVRc/ytoR528pCUVlzLdF1DET7Zwk7ptqzJXH7yYWg1JatQpy1POjZGKgaakjhe/oZLUqiuoZSGVhdWUggg9II6JwnbOPNU0gf9HCpSXuDE/RwPCT24u85w1RcPVb/AqPlW/+k5OhHUpPEePXeuOJ71nseZUeSo4Ph2OvSibSxRw+Lr1eWruKOHGJ5LlTlJZ2TIU4BACnRcWvxl6HX2Sk1tvBMbiFrU6QVEbTkMz1aQTV1q3sedoUIAAB1uCJfNqy1Jwllulu1Zep88dvZVNOsqIlBqeGdy/vFNmzZKjI9Maq6f4YBsSQX7CZ5qb6VEp2NKg7Jy+c+8nUUlpG4smpYVOzgZKYjbmAXRqBYKHpW93QhUTKWHYgzA29OE1ztjAK1UvTpVEz5UFPCKTYqQ+Y/iuUPQNAOI1lbUuoWHrb2f4PlR3pcVHpKqVCcXiVzVMSihUTk+ajZAL88kKehDqTPhhd8nWkCKXK5MMaztUxCBm/zSLHKue3JgHKv4uAtrI0Ns4MMVdKQJxThAmHVSCMgzkHUvzwCQL66CwJhtubPyX5AABAoAwynm1ajLlCjoLISR953vdTvYVej/BJbv7XbFLULKqNSrNTIR2cEZEcG5AP4rcOgyP9olTLgiv5qtMeTX+0n8CtPIKlNFQVAtSyoFJuBqQOm1pUfafVtSo0/wA1Rn/pW3/dJu6i7lmFi3VSfX4LZsX+Go//AIUv2Cb01NmrlpU16qaDyUTbli2KpeJnqIiCIiIgCIiAIiIAiIgCIiAIiIAiIgENvLjvd8JVqA2YJlT5m5q+RN/CR24mz+SwiuRzq55U9eUiyjy18TNTfkmtUw2CQ/51XM/8qjS/kXP6ZbqKBVCjQKoUDqAFhI7yv0NMnkoqPMnd+i2PqJQ/ad8OH+ap9BL5KH7Tvhw/zVPoJyp4WSwP317/AAWjd3+Ew/8Ax6P7RIzf5wMC4PFnohe/OD9AZA4HfhKNKlSFB2NOkiMboouFANuOnlIPePeKpjMq5RTVWzBFfMS3C5Nh0Xtp0mVucctkaKWDq9upNWSdyx7l7LoYrBvTr0kqAV3Vcy85eap0Yag6ngZS97dh+5Yjkw/KK6Z0zfEq3Ise2449M6TuBhymDUlbco7OB2GwB8QLyi791TiNpNTU3y8jh07zYn1cyqtGORO2p52Ns6smupe9xNr+9YRQ5vUoHkqnWwA5jnvHqDNytu7hnd3dXYutRbNUcqnKC1Qot7KT0kSh7h1Xwm0XwtTTlM1Jh0Z0uUYdhAe3eJ1eW0Xmgr7rQri9E+UVjEbo0mqIQzCmvLGqjNUZqhdUHx3vbmC46Zt/+m8PcG1UZawrqoq1Aqtck2F7AEkkgScmO+XZV0LnWm7JtkOu72HD5wKgblXq5hVqC5a11Ouq6Dm8NBPiN18IDcCoDmRhatUFirl1sL8AWJk/M2iy6DtZrlmAJzb2kVc+IpUh+ClfxdiP+ydKnJdtvy21SvR7zQpDwZAfW8rqvSxpwEf7jl0TZ1emtlA6hafSYWZlpjZmIiDgiIgCIiAIiIAiIgCIiAIiIAmInwxFUIjO3BUZj3AXMBK5VMAPeNq162hXC0xRX5ze/lzh4y3gWlZ3IwxGHNd/ixVV6zeJsPCwv4yz3kY7X66l2IffstkkjMoXtP8Ahw/zVPoJfZQ/ad8OH+ap9BI1PCy3A/fj7/BU8Fu9i6yB0oOVtcMzKoYdYuRcT44Ye7YhRiaNwjjOlQcVPSOvTUdBnWd3P4TD/wDHp/sEg/aBsxXw/LgDPRYE24sh0ceFwfA9crdK0bo2xx8p1HTmtG7ablpoOhpqy2y5AVy6DLbS3Zach3cHve1kqHg2Iq4lu4EunrkEtWydrFdj1mY86hTqUVPaRan+9R4SI9lWFzV61Xop0lQd7m/0Q+cjN5pRXueNXi41Mr4Zs7/4f3bGYbHqOLpn+ZGBF+9bj9E6QDcXEgN89l+9YU01F2FWiyf1hG/6WaTyIFUKNAoAHcJZGOWT6PU4lZs+sREuJCImIB8K9QKrM3BVLHuGs5Ju0DX2jSc6lqr1m/pLfW0v++mK5PBVdbGoBSH69D6XlQ9nOHzYtn/26J83IA9FMpqaySPTwiyUJ1OqsdSmYiXHmCIiAIiIAiIgCIiAIiIAiIgCIiAebSB3vrFcJUVfiqZKKa2JaowTTwJk8ZX9vU+UxGDo9HLPXbuorp/1Ok4ydK2b01JfA4YUqaU14IiIvcFA+02ZmJIg227sxKH7Tvhw/wA1T6CX2UL2nfDh/mqfQSup4Wa8D99e/wAFp3b/AIPD/wDHpftExvGoODxAPDkKhP8ASY3b/g8P/wAel+0SN312ktLCuhPOqjk0Xp1+Ju4C/p1w3aPsQjFyr2XX9zmxx2TAVqV/83E4fTsAcn1RJefZfhMmDeoRrVrub9aoAg9Q05hi24Dvadn2FSXC7OpBtBTw2d+jUqXb1JmWj3ql3wjuNV8U7eR89v7z0sJZWBdyuYU1IBA62J4D17JC0faGl7PhnQda1A58iB9ZT6VGvjq7FFLvUJdudYIO0ngBoB3Cb2M3QxtJc3JioBx5I5j5aE+AMtc5vVbHowwmHikqjWb1sdUwOKWtTWol8rqGXMCDY9YM2D9pF7tJlwmHGulCn8XH4JKg3mhO6PHnFKTS2TPcRPJMETnftJxt3pYcH4VNVh2nRfQPNr2aYa1OtV/NUCL3Kt/q0p238fy+Jq1b3Vnyp8g0HmBfxnTdz8LyeDoqeLKXPe93+8zQeao2exiF2OEjDl2uWCIiaTxxERAEREAREQBERAEREAREQBERAPk3GQyU8+Pdzwo4VEX5qrFm8bInmJNmReyFzNXqf7mIcDuRRT+qGce6JRdk35WJeIidImJQfad8OH+er9BL8JQfad8OH+ar9BIVfCzXgfvx9/gh23xrJRp0cOop5KSIzsAxYqgBsOAHfc90r9WrUrvdmes7HKubMzN1AD7CTewN0q2KAdzyNL8LEXZx1gdXafWX/ZuxMNgkZ0XVUJao/OawFzr0DsFhM6jOWstj0amIw+HvkV5fzk4+cCzYtcK1s3LpQYZrhSWAIv2EkeE67ve+TA17aXphPB2C/QznG5FM4jaa1WF8prYh+9gberidM3qoF8HiFHEUiw/TzvtFFd1vqePSqOdZTly03+Sv+zWkBSrP+I1gpPYEUgeZPnLwDOU7m7dXC1GSobU6hBzflYaBj2EaHuE6lScMAQQQRcEG4IPAgy+k042Rox1OUazk9nsfaZmJmWGM8yA3x2j7vhHINncckne3E+AufCT85Zv/ALS5XEiip5lAZT85sT5Cw85CpLLE1YOj2tVLhav2K5gMKa1VKQ41HRPAmxPgLnwncaahQFGgVQAOwaTmPs+wXKYs1CObRUt+t9B6ZjOpH7SujGyuafqdS9RRXC/2e4iJeeYIiIAiIgCIiAIiIAiIgCIiAIiIB4YTT2UlqS/zAue92Ln902a/wN8jfSZQWAHUI5O30sfWYmZiDhp7PrB6av3qe9SVPqDKv7QAEWhXamtZKdcq9Msyglxzb2B0uNR03ElN3K5z4qgf9HFOyj+Spzx6lpM4iilRSjqrqwsysoYEdoMi1mVi1N053X8TNfZWJFWjTqWAz0kcqpuFJUEgHsOnhI7fXE8ngMQw4tT5Ne9yE+8hNnOmzcXiKVSsKeGKCrRRix1djog1JtZgQOoEzQ3h2zT2mvutFuRRCa71q/NW1MHTKLm2t9erhKpS7jXOxyVKU75VdWuefZRhefiK5HBadJT33dvok6QyAgg63lW9n2CFPBg5g/KVatTMuYZhfIDqAeCestgkqMcsEiqKcdHujje8mxHwtUix5JiWpv0W45Seseo1mzuvvK+EcI5L0WPOXjlv+JfuOnvnUcVhadVDTqIrqw1Vhcf+ds5bvVu6cI4ZCWpOcqZtSjflJ6dL2PYerWEoOLzRPboYmGIh2VRa/P8A06yjggEcCLgz6Su7lYo1MFSJNygZD+k2HpaTwOkvi7q55E4uM3Ho7EbtzaAw2Heq1rhbIPzMdFHn6TjVSoXYsxuzEsxb8RJuT5yzb9bY5etyKHmUSVPUz8CfDh/VIDZmCNeulFfxuFY9S8SfAAnwmWrLNLKj3sDRVGi6kt3q/JHStwMDyWFDkWas3Kfp4L6C/jLUJ8KFMIqqBYKoUDqA0E+v9ppisqSPBqzc5uT5Z7iIkiAiIgCIiAIiIAiIgCIiAIiIAiIgGCJmIgCIiAUVsV7tthlbRMVSQdma1gfNCP1y7Zpz/wBpFAq+HxCEqRnS/wCUizKR6+UtW7u1BisOtXgxGVx+Vh8Q+47CJCLtJo2V4ZqUaq6Wfqj77R2Th8Tbl6SVCqlVLDVQeNiNRKXvlu7hMLQ5SjTZGaoiIFeow1uToSegH0nRDMHXSJRT9TNTqSg00yn7kbTU06eEyOr06L1GLIyjWqbAX1PG9+Eti1FYXUgjrBuNDrKL7QtrJSdKdJgldkK1HRwGWkSDlJ46kA9gB/NI/EbxNQweFw+HcI/Jq7suU5Re4Xq14ns75BVIx0fBp7CVZqUd29v3Om/2la3/AAvuTX4ipRyd+cD6EyCwftAcLath1Yj8VN8t/wBJB+sh95N5nxgVQnJU0ObLmzFm4XJsOFzp2xKrFxdi6hgK8aqbVkne9y2+zi/urdXLvl8l+95s75bc92pZUP8Ai1QVT+QdL+HR227Zr7DrJgdnK9a4upfL+JmclgoHXa3l2Tne08e+JqNVc85uA6EUcAOwf365yU8sEuSdHDdvXlJ+FP8AJrS9+znZmr4ph/8AVT9Cx89PAylYPCvVqLSpi7O4RfHiT2AXJ7BO0bMwS0KSUk0VFCi/T1k9pOshRjd36Gn6nWyQ7Nbv4JCIiajwRERAEREAREQBERAEREAREQBERAEREAREQBERAK1vxhOVwb2FzTIqr+nj6XlD3S28cJVs5/walhU6cp6HA7OB7O4TrVSmGUqQCCCCOsHjOJ7XwBw9epRP4H0PWp1Q+REorXi1JHrfT8tWnKjL1O2UqgYAgggi4INwQe2e7dk5XuxvW2EtSqA1KPRl1an3dY7PLqnSNn7RpV0D0ai1F6bNqvYRxB7DLIzUkYsRhZ0ZWa04ZsNQU6lFJ62VTKDtbdWpiMfWYEUaWSmxqZdM2UDKBcX1S56h3zol5V9/sKamAq2YrydqrBeDhOKnstr3gSNSKavbbUqhVnTeaO5RNtbuVsInK1Ho5CwUOrG5JBIsLX4Anwkhgt21oouJx7olEZXREOdqhIuF7j1D04yH2vtwV8BhcOTd6LsKgs3wotkN+B0PpNLa+162IcPUa4UBUVVsqDL8AToGneZkzxTbRtp46rUTUnZK17LXU39u7afF1M7cxF0ppm0UdZ6yekyJLi9r6zWqlixHp2T37uzJUqhbrSZM56FuSEXxIlcqjbNDx6pJxpqyTtryWjcnaVCji1WojlqhWlTfm2QnrHHU2F+gd5nW1AnK9hnCPVxCYp0w7U8fTxVLVQTZiMg7NRoOg9mnVRNmHk3E8mrWlWm5y9vJHuIiaCAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgHmUX2hbJzquKQc5Fy1O1L6HwJ8ieqXufGpTDAqQCCLHNqCDxEjKOZWLaFV0pqS4ODz3SrNTbMjOjD8SOynzEnN6d32wlTMoLUXPMYa5SfwH7HpHbICYpJxdmfUU6kK0E1qmSybx40CwxVX9RRvUi80cdtCvVUipWqOMp0dmI8uHpNeYYaG35ZFybW5GeHgou0Vs9kaOTj2KG87T3Ue+n8g/UZ9RRutjxy5fJpI7I2HUxThKS5rfG50VAekn7cTKlCT0R4n6KpGLtZJrVt2NHA0jVrU6a/FUZKa/EdS1s2nQOPhLfV3KxaV2oUjfDV+R5WozJwRgSpXjcG9rcbjXjLrsHYNLCUwqDMxC56jAZnP2HUPvrJ2a4YZJasw1JOV4t3V7+5T8fuRTq4xcVnyrmR6lLJfOy2Asb6AgC+nQevS4TMTRGKjey3IJJbGYiJM6IiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAmJmIBq4rDJVUo6B1IsVIuCJQNtbiuCXwpzqf9OobFexWOhHf5mdHtFpGUIy3LqOIqUXeL9uDieI2Hi0Nmw1YfLTZx5i4maGwsVUNlwtbvZGQeb2E7URAEq7BdTd/Valtlc51sfcN2IfFPkH+3TNz3F+jwv3y84HBU6KBKaBFHQBx7SeJPaZuxLIwjHYw1sRUqvvPTpwZmYiTKRERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAP//Z"
+                    alt="">
+
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#home">apropos de moi</a></li>
+                    <li><a href="#skills">competence</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+
+            </div>
+
+        </nav>
+    </header>
+    <section id="home" class="home">
+        <div class="info">
+            <h1>
+                bonjour
+            </h1>
+            <h1>
+               je suis
+                <span>
+                    Mounia Daoudi
+                </span>
+            </h1>
+            <p class="bio">
+                Je suis une personne très passionnée en électrotechnique, j'aime travailler en groupe, et très sérieuse.
+            </p>
+        </div>
+
+    </section>
+    <section id="skills" class="skills">
+        <h1>
+            mes competences
+        </h1>
+        <div class="Myskills">
+            <div class="skill">
+                <h3>HTML</h3>
+                <p> i know how to code width HTML</p>
+            </div>
+            <div class="skill">
+                <h3>css</h3>
+                <p> i know how to code width css</p>
+            </div>
+            <div class="skill">
+                <h3> javaScript</h3>
+                <p> i know how to code width javascript</p>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="skills">
+        <h1>
+            mes langauges
+        </h1>
+        <div class="Myskills">
+            <div class="skill">
+                <h3>Anglais</h3>
+                <p> i know how to write, read, speak</p>
+            </div>
+            <div class="skill">
+                <h3>css</h3>
+                <p> i know how to code width css</p>
+            </div>
+            <div class="skill">
+                <h3> javaScript</h3>
+                <p> i know how to code width javascript</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h1>
+            contact moi
+        </h1>
+        <div id="success" class="success">
+            <p>
+                your message has been sent
+            </p>
+        </div>
+        <form>
+            <div class="name">
+                <label for="name"> Nom</label>
+                <input class="form control" placeholder="name" type="text" name="name" id="name">
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <input placeholder="email" type="email" name="email" id="email">
+
+            </div>
+            <div class="message"> <label for="message"> Message</label>
+                <textarea placeholder="message" name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <button id="btn" type="submit" class="btn">envoyer</button>
+        </form>
+    </section>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function (e) {
+            e.preventDefault();
+            document.querySelector('#success').style.visibility = 'visible';
+            var Name = document.querySelector('#name').value;
+            var Email = document.querySelector(' #email').value;
+            var Message = document.querySelector('#message').value;
+            alert(Name + Email + Message)
+        }
+
+
+    </script>
+</body>
+
+</html>
