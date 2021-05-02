@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="./bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
@@ -15,19 +16,19 @@
             height: 100vh;
         }
         .skill {
-            background-color: rgb(190, 136, 35);
-            width: 30%;
-            flex: 1;
+            background-color:beige;
+            width: 200px;
             margin: 10px;
-            padding: 5px;
+            padding: 15px;
             text-align: center;
             border-radius: 5px;
-            color: blue;
+            color:;
+            flex: 1;
         }
 
         .skill:hover {
             color: white;
-            background-color: rgb(0, 255, 13);
+            background-color: rgb(236, 133, 193);
         }
 
         .Myskills {
@@ -95,15 +96,15 @@
             display: flex;
             align-items: center;
             padding: 20px;
-            background-color: rgb(131, 128, 128);
+            
+            background-color:rgb(211, 210, 208);
 
-            font-family: 'Bangers', cursive;
-font-family: 'Indie Flower', cursive;
+
         }
 
         .info {
+            text-align: center;
             flex: 2;
-            color: beige
         }
 
         .photo {
@@ -117,7 +118,7 @@ font-family: 'Indie Flower', cursive;
 
         .skills {
             height: fit-content;
-            background-color: rgb(180, 157, 157);
+            background-color:rgb(211, 210, 208);
             padding: 20px;
 
 
@@ -125,10 +126,7 @@ font-family: 'Indie Flower', cursive;
 
         .contact {
             height: fit-content;
-            background-color: rgb(34, 163, 180);
-
-
-
+            background-color:rgb(211, 210, 208);
         }
 
         * {
@@ -175,7 +173,7 @@ font-family: 'Indie Flower', cursive;
         .btn {
             width: 60%;
             margin: auto;
-            background-color: blue;
+            background-color: rgb(236, 133, 193);
             height: 40px;
             border: none;
             border-radius: 5px;
@@ -186,8 +184,8 @@ font-family: 'Indie Flower', cursive;
 
         .success {
             visibility: hidden;
-            color: white;
-            background-color: rgb(220, 231, 66);
+            color: rgba(255, 255, 255, 0.993);
+            background-color:rgb(236, 133, 193);
             width: 60%;
             padding: 10px;
             text-align: center;
@@ -220,12 +218,12 @@ font-family: 'Indie Flower', cursive;
     <section id="home" class="home">
         <div class="info">
             <h1>
-                bonjour
+                Bonjour
             </h1>
             <h1>
                je suis
                 <span>
-                    Mounia Daoudi
+                    Mounia DAOUDI
                 </span>
             </h1>
             <p class="bio">
@@ -236,42 +234,48 @@ font-family: 'Indie Flower', cursive;
     </section>
     <section id="skills" class="skills">
         <h1>
-            mes competences
+            Mes competences
         </h1>
         <div class="Myskills">
             <div class="skill">
-                <h3>HTML</h3>
-                <p> i know how to code width HTML</p>
+                <h3>MATLAB</h3>
+                <ul>
+                    <li>Possibilite d'inclure un programme en c/c++</li>
+                    <li>Possibilite d'executer du code en dehors du programme </li>
+                    <li>Une aide tres bien faite</li>
+                </ul>
             </div>
             <div class="skill">
-                <h3>css</h3>
-                <p> i know how to code width css</p>
+                <h3>Visual Studio Code</h3>
+                <p> je programme avec Visual Studio Code editor les site web et les pages web </p>
             </div>
             <div class="skill">
-                <h3> javaScript</h3>
-                <p> i know how to code width javascript</p>
+                <h3>Mes Langauges </h3>
+                <ul>
+                    <li>Arabe:langue maternelle</li>
+                    <li>Français : Bonne Métrise
+                    </li>
+                    <li>Anglais : Assez Bien</li>
+                </ul>
             </div>
+
         </div>
-    </section>
-    <section id="skills" class="skills">
-        <h1>
-            mes langauges
-        </h1>
         <div class="Myskills">
             <div class="skill">
-                <h3>Anglais</h3>
-                <p> i know how to write, read, speak</p>
+                <h3> Excel  </h3>
+                <p>  </p>
             </div>
             <div class="skill">
-                <h3>css</h3>
-                <p> i know how to code width css</p>
+                <h3>Windows</h3>
+                <p>  </p>
             </div>
             <div class="skill">
-                <h3> javaScript</h3>
-                <p> i know how to code width javascript</p>
+                <h3>Word  </h3>
+                <p>  </p>
             </div>
         </div>
     </section>
+   
 
     <section id="contact" class="contact">
         <h1>
@@ -285,15 +289,15 @@ font-family: 'Indie Flower', cursive;
         <form>
             <div class="name">
                 <label for="name"> Nom</label>
-                <input class="form control" placeholder="name" type="text" name="name" id="name">
+                <input class="form-control" placeholder="name" type="text" name="name" id="name">
             </div>
             <div class="email">
                 <label for="email">Email</label>
-                <input placeholder="email" type="email" name="email" id="email">
+                <input class="form-control" placeholder="email" type="email" name="email" id="email">
 
             </div>
             <div class="message"> <label for="message"> Message</label>
-                <textarea placeholder="message" name="message" id="message" cols="30" rows="10"></textarea>
+                <textarea class="form-control" placeholder="message" name="message" id="message" cols="30" rows="10"></textarea>
             </div>
             <button id="btn" type="submit" class="btn">envoyer</button>
         </form>
